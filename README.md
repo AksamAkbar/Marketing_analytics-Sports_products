@@ -29,7 +29,7 @@ To convert unstructured review text into quantitative metrics:
 ### 3. Business Intelligence & Dashboard Engineering (Power BI)
 Built an interactive dashboard featuring specialized views for stakeholders:
 * **Overview Matrix:** High-level tracking of **Conversion Rate, Engagement Rate, Average Order Value (AOV), and Review Scores**.
-* **Conversion Funnel Exploration:** Tracks monthly traffic flow, isolating peak conversion windows (e.g., December high-water mark of 10.2%) and seasonal product spikes.
+* **Conversion Funnel Exploration:** Tracks monthly traffic flow, isolating peak conversion windows and seasonal product spikes.
 * **Engagement Insights:** Discovers engagement velocities by content vertical (e.g., evaluating high-performing blog media against stable video modules).
 * **Sentiment Analysis:** Maps numerical review ratings alongside VADER sentiment metrics to identify specific feedback trends.
 
