@@ -1,29 +1,57 @@
-# Marketing Analytics Business Case: ShopEasy E-Commerce Optimization
+# ShopEasy Marketing Analytics: End-to-End E-Commerce Funnel & Sentiment Pipeline
 
-## 📌 Project Overview
-This project presents an end-to-end data analysis workflow to address the challenges faced by **ShopEasy**, an online retail business specializing in sports products. Despite scaling investments into new online marketing campaigns, ShopEasy has observed an explicit drop in overall customer engagement, a decline in downstream conversion rates, and a severe reduction in return on investment (ROI). 
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-red.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
+[![VADER](https://img.shields.io/badge/NLP-VADER%20Sentiment-green.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
+[![PowerBI](https://img.shields.io/badge/Power%20BI-Interactive%20Dashboard-orange.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
 
-This analysis bridges cross-functional data—including customer product reviews, unstructured social media sentiment, and campaign performance matrices—to extract data-backed actionable optimization blueprints.
+## 📌 Business Case Overview
+ShopEasy, an online retail store specializing in sports apparel and equipment, rolled out several high-budget digital marketing campaigns. Despite elevated investments, performance dropped: **customer engagement decreased, downstream conversions stalled, and marketing expenses scaled without meeting ROI projections.**
 
----
-
-## 📉 Core Business Problem
-* **Reduced Customer Engagement:** Marked decline in total active traffic, click-through actions, and community feedback across web platforms.
-* **Decreased Conversion Rates:** Fewer storefront visitors successfully advancing through checkout phases into paying customers.
-* **Elevated Marketing Expense:** Rising customer acquisition costs failing to hit expected ROI milestones.
-* **CX Strategy Deficit:** Critical gaps in mapping unstructured review feedback to explicit product and service upgrades.
+This project delivers a complete data analysis pipeline to address these bottlenecks. By extracting, cleaning, and transforming dimensional datasets, the pipeline unifies quantitative campaign metrics with qualitative customer reviews to surface actionable, data-backed optimization insights.
 
 ---
 
-## 🎯 Strategic Metrics & Architecture
+## 🛠️ Data Pipeline Architecture
 
-### 📊 Key Performance Indicators (KPIs)
-* **Conversion Rate:** The percentage of storefront traffic finalizing checkout transactions.
-* **Customer Engagement Rate:** Total interactions (clicks, likes, comments, shares) with digital campaign collateral.
-* **Customer Feedback Score:** Consolidated mathematical average from structured customer review ratings.
+### 1. Data Extraction & Cleaning (SQL Server)
+Raw operational files were ingested into SQL Server to construct clean relational reporting models. 
+* **Customer Dimensions (`dim_customers`):** Extracted geography identifiers, addressed missing values, and isolated structural address movements.
+* **Product Catalog (`dim_products`):** Segmented pricing categories, mapped out seasonal sports products (e.g., Ski Boots, Kayaks), and configured clean standard prices.
+* **Customer Reviews (`fact_customer_reviews`):** Cleaned textual whitespace anomalies and standardized double-spacing patterns within raw feedback strings.
+* **Customer Engagement (`fact_customer_engagement`):** Cleaned irregular engagement tags and converted text-based upper/lowercase tags into numeric attributes.
 
-### 🚀 Optimization Blueprint Goals
-1. **Maximize Funnel Conversion:** Identify the exact drops, hurdles, and friction points in the checkout pipeline to minimize consumer drop-offs.
-2. **Reshape Engagement Strategy:** Isolate high-performance content media categories (e.g., text vs. rich imagery vs. video) to steer media investments.
-3. **Enhance Customer Experience (CX):** Unpack unstructured textual feedback via sentiment models to directly optimize physical sports product features and customer support workflows.
+### 2. Natural Language Processing & Sentiment Scoring (Python)
+To convert unstructured review text into quantitative metrics:
+* Applied the **VADER (Valence Aware Dictionary and sEntiment Reasoner)** NLP model to compute programmatic sentiment scores (`Positive`, `Negative`, `Neutral`) for each product review.
+* Standardized text data layouts, stripped non-alphanumeric noise, and integrated the finalized tabular sentiment scores directly back into the database architecture.
 
+### 3. Business Intelligence & Dashboard Engineering (Power BI)
+Built an interactive dashboard featuring specialized views for stakeholders:
+* **Overview Matrix:** High-level tracking of **Conversion Rate, Engagement Rate, Average Order Value (AOV), and Review Scores**.
+* **Conversion Funnel Exploration:** Tracks monthly traffic flow, isolating peak conversion windows (e.g., December high-water mark of 10.2%) and seasonal product spikes.
+* **Engagement Insights:** Discovers engagement velocities by content vertical (e.g., evaluating high-performing blog media against stable video modules).
+* **Sentiment Analysis:** Maps numerical review ratings alongside VADER sentiment metrics to identify specific feedback trends.
+
+---
+
+## 📈 Key Analytical Insights & Data Discoveries
+* **Funnel Conversion Velocity:** Conversion metrics bottomed out at 5.0% in October but recovered drastically to 10.2% in December, primarily catalyzed by targeted winter apparel demand (e.g., Ski Boots surging by over 150% in seasonal transaction velocity).
+* **Media Engagement Variance:** Blog posts drove the highest raw engagement count across the platform, whereas video assets remained stable but yielded a lower aggregate click-through density.
+* **Customer Friction Analysis:** The global store review rating hovered at 3.7 (under the corporate 4.0 KPI target). Python sentiment modeling isolated that negative remarks clustered tightly around specific delivery delays and product sizing inconsistencies.
+
+---
+
+## 📂 Repository Layout
+```text
+├── data/
+│   ├── raw/                  # Original data files (customers, engagement, products, reviews)
+│   └── processed/            # Programmatically cleaned and scored datasets
+├── sql_scripts/
+│   ├── data_cleaning.sql     # SQL Server scripts transforming and formatting raw dimension tables
+│   └── views_creation.sql    # Finalized views prepared for Power BI ingestion
+├── notebooks/
+│   └── sentiment_analysis.ipynb # Python VADER model processing customer review text
+├── reports/
+│   └── Episode 1 - Marketing Analytics Business Case (Clean).pptx # Consulting-style executive presentation
+└── README.md                 # Project summary and documentation
