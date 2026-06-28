@@ -43,15 +43,16 @@ Built an interactive dashboard featuring specialized views for stakeholders:
 ---
 
 ## 📂 Repository Layout
-```text
+```Marketing_analytics-Sports_products
+
 ├── data/
 │   ├── raw/                  # Original data files (customers, engagement, products, reviews)
 │   └── processed/            # Programmatically cleaned and scored datasets
-├── sql_scripts/
+├── scripts/
 │   ├── data_cleaning.sql     # SQL Server scripts transforming and formatting raw dimension tables
 │   └── views_creation.sql    # Finalized views prepared for Power BI ingestion
-├── notebooks/
-│   └── sentiment_analysis.ipynb # Python VADER model processing customer review text
+    └── sentiment_analysis.ipynb # Python VADER model processing customer review text
 ├── reports/
-│   └── Episode 1 - Marketing Analytics Business Case (Clean).pptx # Consulting-style executive presentation
+│   └── Report - Marketing Analytics Business Case (Clean).pptx # Consulting-style executive presentation
+    └── Dashboard - Marketing Analytics dashboard (Power BI)
 └── README.md                 # Project summary and documentation
