@@ -43,7 +43,7 @@ Built an interactive dashboard featuring specialized views for stakeholders:
 ---
 
 ## 📂 Repository Layout
-```Marketing_analytics-Sports_products
+```
 
 ├── data/
 │   ├── raw/                  # Original data files (customers, engagement, products, reviews)
