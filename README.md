@@ -1,7 +1,7 @@
 # ShopEasy Marketing Analytics: End-to-End E-Commerce Funnel & Sentiment Pipeline
 
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-red.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
-[![Python](https://img.shields.io/badge/Python%2B-blue.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
+[![Python](https://img.shields.io/badge/Python_%2B-blue.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
 [![VADER](https://img.shields.io/badge/NLP-VADER%20Sentiment-green.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
 [![PowerBI](https://img.shields.io/badge/Power%20BI-Interactive%20Dashboard-orange.svg)](https://github.com/AksamAkbar/Marketing_analytics-Sports_products)
 
